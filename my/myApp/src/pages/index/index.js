@@ -1,11 +1,13 @@
 import Taro, { Component } from '@tarojs/taro'
-import { View, Button, Text } from '@tarojs/components'
+import { View, Text, Swiper, SwiperItem, Slider, Image } from '@tarojs/components'
+import { AtButton,AtList, AtListItem } from 'taro-ui'
+
+
 import { connect } from '@tarojs/redux'
 
 import { add, minus, asyncAdd } from '../../actions/counter'
 
 import './index.scss'
-
 
 @connect(({ counter }) => ({
   counter
@@ -20,11 +22,14 @@ import './index.scss'
     dispatch(asyncAdd())
   }
 }))
-class Index extends Component {
 
-    config = {
+export default class Index extends Component {
+
+  config = {
     navigationBarTitleText: '首页'
   }
+
+
 
   componentWillReceiveProps (nextProps) {
     console.log(this.props, nextProps)
@@ -39,14 +44,27 @@ class Index extends Component {
   render () {
     return (
       <View className='index'>
-        <Button className='add_btn' onClick={this.props.add}>+</Button>
-        <Button className='dec_btn' onClick={this.props.dec}>-</Button>
-        <Button className='dec_btn' onClick={this.props.asyncAdd}>async</Button>
-        <View><Text>{this.props.counter.num}</Text></View>
-        <View><Text>Hello, World</Text></View>
+        <AtButton type='primary'>按钮文案</AtButton>
+          <Swiper
+            className='test-h'
+            indicatorColor='#999'
+            indicatorActiveColor='#333'
+            circular
+            indicatorDots
+            autoplay>
+            <SwiperItem>
+              <View className='demo-text'>11111</View>
+            </SwiperItem>
+            <SwiperItem>
+              <View className='demo-text'>22222</View>
+            </SwiperItem>
+            <SwiperItem>
+              <View className='demo-text'>333333</View>
+            </SwiperItem>
+          </Swiper>
       </View>
     )
   }
 }
 
-export default Index
+
