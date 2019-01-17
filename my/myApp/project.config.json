@@ -1,7 +1,7 @@
 {
   "miniprogramRoot": "./dist",
   "projectname": "myApp",
-  "description": "&#34;家居云供&#34;",
+  "description": "calamus",
   "appid": "touristappid",
   "setting": {
     "urlCheck": true,

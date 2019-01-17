@@ -3,7 +3,6 @@ import Taro, { Component } from '@tarojs/taro'
 import { Provider } from '@tarojs/redux'
 
 import Index from './pages/index'
-import Calamus from './pages/calamus'
 
 import configStore from './store'
 
@@ -21,8 +20,7 @@ class App extends Component {
 
   config = {
     pages: [
-      'pages/index/index',
-      'pages/calamus/index'
+      'pages/index/index'
     ],
     window: {
       backgroundTextStyle: 'light',
